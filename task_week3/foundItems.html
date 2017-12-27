@@ -1,0 +1,12 @@
+<div class="top-buffer">
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in list.items">
+    {{ item.name }} , {{ item.short_name }}, {{ item.description }}
+    <button ng-click="list.onRemove({index: $index});" class="btn btn-primary btn-sm">Don't want this one!</button>
+  </li>
+</ul>
+</div>
+
+<div class="form-group message" ng-if="list.emptyList()">
+  <p class="navbar-text"><span class="text-danger">{{list.myError}}</span></p>
+</div>
